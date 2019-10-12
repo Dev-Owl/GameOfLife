@@ -58,6 +58,19 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        actions: <Widget>[
+          FlatButton(
+            child: Icon(Icons.restore),
+            onPressed:() {
+              if(_game.running)
+                _game.toggleGame();
+                setState(() {
+                  _game.resetWorld();    
+                });
+            } ,
+          )
+           
+        ],
       ),
       body: StreamBuilder<double>(
         stream: _game.stateController.stream,
