@@ -30,7 +30,7 @@ class GameOfLife {
 
   Future<void> _runTheGame() async {
     while (_running) {
-      await Future.delayed(Duration(milliseconds: 350));
+      await Future.delayed(Duration(milliseconds: 500));
       var newWorld = List<bool>.from(_world);
       for (var i = 0; i < worldSize; ++i) {
         //In case x cell alive do this
